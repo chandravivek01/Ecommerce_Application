@@ -1,9 +1,6 @@
 package com.vcs.ecommerce.config;
 
-import com.vcs.ecommerce.entity.Country;
-import com.vcs.ecommerce.entity.Product;
-import com.vcs.ecommerce.entity.ProductCategory;
-import com.vcs.ecommerce.entity.State;
+import com.vcs.ecommerce.entity.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +40,9 @@ public class RestConfig implements RepositoryRestConfigurer {
 
         // state
         disableHttpMethods(State.class, config, theUnsupportedActions);
+
+        // order
+        disableHttpMethods(Order.class, config, theUnsupportedActions);
 
         // call an internal helper method
         exposeIds(config);

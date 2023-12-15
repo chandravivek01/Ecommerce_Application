@@ -24,7 +24,7 @@ public class RestConfig implements RepositoryRestConfigurer {
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
 //        RepositoryRestConfigure.super.configureRepositoryRestConfiguration(config, cors);
 
-        cors.addMapping(config.getBasePath() + "/**").allowedOrigins("http://localhost:4200");
+        cors.addMapping(config.getBasePath() + "/**").allowedOrigins("https://localhost:4200");
 
         // Disable the below methods
         HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE};
